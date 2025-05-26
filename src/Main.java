@@ -1,6 +1,20 @@
 package estropeado;
 
+/**
+ * Clase principal de la aplicación.
+ *
+ * @author Carlos
+ * @version 1.0
+ * @see Baraja
+ */
+
 public class Main {
+
+	/**
+	 * Metodo principal
+	 *
+	 * @param args argumentos de linea de comandos
+	 */
 
 	public static void main(String[] args) {
 		// main para hacer pruebas

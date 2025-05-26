@@ -2,12 +2,22 @@ package estropeado;
 
 import java.util.Random;
 
+/**
+ * La clase representa una baraja de 48 cartas
+ *
+ * @author Carlos
+ * @version 1.0
+ */
+
+
 public class Baraja {
 
     private String[] p = {"Oros", "Copas", "Espadas", "Bastos"}; // array de palos
     private String[] num; // array de cartas
 
-    // constructor
+    /**
+     * Constructor de la clase Baraja
+     */
     public Baraja() {
         num = new String[48]; //inicializa array a 48 cartas
 
@@ -40,9 +50,11 @@ public class Baraja {
             }
         }
     }
-
-    // metodo para sacar una carta de la baraja
-    // devuelve la carta y pone su posición a null porque ya no está en la baraja
+    /**
+     * Metodo para sacar una carta
+     *
+     * @return la carta extraida, o null si esta vacia
+     */
     public String sacar() {
         for (int i = 0; i < num.length; i++) {
             String carta = num[i];
@@ -54,8 +66,11 @@ public class Baraja {
         return null;
     }
 
-    // metodo para meter una carta de fuera a la baraja
-    // busca la primera posición nula del array y le asigna la variable carta
+    /**
+     * Metodo para añadir una carta a la baraja
+     *
+     * @param carta la carta a añadir
+     */
     public void meter(String carta) {
         for (int i = num.length - 1; i >= 0; i--) {
             if (num[i] == null) {
@@ -67,7 +82,11 @@ public class Baraja {
         System.out.println("Error: baraja llena");
     }
 
-    // metodo interno para comprobar si la baraja está vacía
+    /**
+     * Metodo para indicar si la baraja esta vacia
+     *
+     * @return true si esta vacia, false en caso contrario
+     */
     public boolean vacia() {
         for (int i = 0; i < num.length; i++) {
             if (num[i] != null) return false;
@@ -75,8 +94,11 @@ public class Baraja {
         return true;
     }
 
-    // metodo para imprimir la baraja
-    // el param alReves permite imprimirla del final al principio si es true
+    /**
+     * Metodo para imprimir las cartas de la baraja
+     *
+     * @param alReves si es true, imprime en orden inverso
+     */
     public void imprimir(boolean alReves) {
         if (vacia()) {
             System.out.println("La baraja está vacía");
@@ -99,8 +121,9 @@ public class Baraja {
         }
     }
 
-    // metodo para barajar con 5 movimientos
-    // desordena las posiciones del array con numeros random
+    /**
+     * Este metodo mezcla la baraja 5 veces
+     */
     public void mezclar5veces() {
         for (int i = 0; i < 5; i++) {
             Random r = new Random();
@@ -112,8 +135,9 @@ public class Baraja {
         }
     }
 
-    // metodo para barajar con 40 movimientos
-    // desordena las posiciones del array con numeros random
+    /**
+     * Y este metodo 40 veces
+     */
     public void mezclar40veces() {
         for (int i = 0; i < 40; i++) {
             Random r = new Random();
