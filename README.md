@@ -92,3 +92,13 @@ cartas = new String[TOTAL_CARTAS]; // Reemplazamos num por cartas
     }
 ```
 
+## Hide Method
+
+- **Problema:** El método "vacia" solo se emplea dentro de la clase Baraja
+- **Solucion:** Al no ser llamado por main se le cambia a Private
+- Ejemplo de uso:
+
+```
+private boolean vacia() { 
+```
+

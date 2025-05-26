@@ -87,7 +87,7 @@ public class Baraja {
      *
      * @return true si esta vacia, false en caso contrario
      */
-    public boolean vacia() {
+    private boolean vacia() { // Hide Method
         for (int i = 0; i < cartas.length; i++) {
             if (cartas[i] != null) return false;
         }
