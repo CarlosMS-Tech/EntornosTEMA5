@@ -24,35 +24,32 @@ public class Baraja {
     public Baraja() {
         cartas = new String[TOTAL_CARTAS]; // Replace Magic Number with Symbolic Constant
 
-        int i = 0; // la i será el índice para meter cada carta en el array cartas
-        // bucle que recorre los 4 palos
-        for (int j = 0; j < p.length; j++) {
-            // pa es un palo de la baraja
-            String pa = p[j];
-            // array de 1 a 12 para crear 1 de oros, 2 de oros, etc
+        int i = 0;
+        for (int j = 0; j < 4; j++) {
+            String palo = obtenerPalo(j); // Extract Method
             for (int k = 1; k <= 12; k++) {
-                // si el número es 10, 11 o 12, en vez del número serán sota, caballo y rey
-                String nombre = "";
-                if (k == 10) {
-                    nombre = "Sota";
-                } else {
-                    if (k == 11) {
-                        nombre = "Caballo";
-                    } else {
-                        if (k == 12) {
-                            nombre = "Rey";
-                        } else {
-                            nombre = String.valueOf(k);
-                        }
-                    }
-                }
-                // aquí se crea la carta como string, p ej, sota de copas
-                nombre = nombre + " de " + pa;
-                cartas[i] = nombre; // se asigna a una posición del array grande de 48 cartas
-                i++; // aumento la posición
+                String nombre = obtenerNombreCarta(k); // Extract Method
+                nombre = nombre + " de " + palo;
+                cartas[i] = nombre;
+                i++;
             }
         }
     }
+
+    private String obtenerPalo(int indice) { // Extract Method
+        String[] palos = {"Oros", "Copas", "Espadas", "Bastos"};
+        return palos[indice];
+    }
+
+    private String obtenerNombreCarta(int valor) { // Extract Method
+        switch (valor) {
+            case 10: return "Sota";
+            case 11: return "Caballo";
+            case 12: return "Rey";
+            default: return String.valueOf(valor);
+        }
+    }
+
     /**
      * Metodo para sacar una carta
      *

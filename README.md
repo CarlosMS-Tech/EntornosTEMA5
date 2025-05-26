@@ -69,3 +69,26 @@ cartas = new String[TOTAL_CARTAS]; // Reemplazamos num por cartas
         throw new IllegalStateException("Error: baraja llena"); // Si la baraja esta llena ahora lanza un error
     }
 ```
+
+## Extract Method
+
+- **Problema:** Metodos muy largos 
+- **Solucion:** Se separa el codigo en otros metodos (obtenerPalo, obtenerNombreCarta).
+- Ejemplo de uso:
+
+```
+ private String obtenerPalo(int indice) { 
+        String[] palos = {"Oros", "Copas", "Espadas", "Bastos"};
+        return palos[indice];
+    }
+
+    private String obtenerNombreCarta(int valor) {  
+        switch (valor) {
+            case 10: return "Sota";
+            case 11: return "Caballo";
+            case 12: return "Rey";
+            default: return String.valueOf(valor);
+        }
+    }
+```
+
