@@ -120,3 +120,16 @@ private boolean vacia() {
         }
     }
 ```
+
+## Extract Variable
+
+- **Problema:** Llama directamente a baraja.sacar en un println dificultando asi la depuracion y la lectura
+- **Solucion:** Extraer carta1 y carta2 cada una a una variable
+- Ejemplo de uso:
+
+```
+	String sCarta1 = "Carta 1: " + carta; 
+	String sCarta2 = "Carta 2: " + carta2;
+	System.out.println(sCarta1);
+	System.out.println(sCarta2);
+```

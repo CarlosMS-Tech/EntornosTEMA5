@@ -45,8 +45,11 @@ public class Main {
 		String carta2 = baraja.sacar();
 		// se imprimen las dos cartas
 		System.out.println();
-		System.out.println("Carta 1: " + carta);
-		System.out.println("Carta 2: " + carta2);
+		String sCarta1 = "Carta 1: " + carta;  // Extract Variable
+		String sCarta2 = "Carta 2: " + carta2; // Extract Variable
+		System.out.println(sCarta1);
+		System.out.println(sCarta2);
+
 		//se mete una de las cartas
 		baraja.meter(carta2);
 		// se imprime la baraja con una carta menos
