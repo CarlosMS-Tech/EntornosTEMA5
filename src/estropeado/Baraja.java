@@ -36,6 +36,14 @@ public class Baraja {
         }
     }
 
+    /**
+     * Método crea una nueva baraja
+     * @return nueva instancia de Baraja
+     */
+    public static Baraja crearBaraja() { // Replace Constructor with Factory Method
+        return new Baraja();
+    }
+
     private String obtenerPalo(int indice) { // Extract Method
         String[] palos = {"Oros", "Copas", "Espadas", "Bastos"};
         return palos[indice];

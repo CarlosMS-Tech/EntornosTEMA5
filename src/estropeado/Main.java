@@ -19,7 +19,7 @@ public class Main {
 	public static void main(String[] args) {
 		// main para hacer pruebas
 		// crea baraja
-		Baraja baraja = new Baraja();
+		Baraja baraja = Baraja.crearBaraja(); // Replace Constructor with Factory Method
 		// imprimir baraja
 		System.out.println("Baraja:");
 		baraja.imprimir(false);

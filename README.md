@@ -133,3 +133,18 @@ private boolean vacia() {
 	System.out.println(sCarta1);
 	System.out.println(sCarta2);
 ```
+
+## Replace Constructor with Factory Method
+
+- **Problema:** new Baraja() limita flexibidad a futuro
+- **Solucion:** se crea el metodo crearBaraja el cual permite crear barajas de una manera mas clara y flexible
+- Ejemplo de uso: 
+
+```
+public static Baraja crearBaraja() { 
+return new Baraja();
+}
+
+Baraja baraja = Baraja.crearBaraja(); 
+
+```
