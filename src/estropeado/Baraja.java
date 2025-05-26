@@ -16,15 +16,15 @@ public class Baraja {
 
     private static final int TOTAL_CARTAS = 48; // Replace Magic Number with Symbolic Constant
 
-    private String[] num; // array de cartas
+    private String[] cartas; // Rename Variable
 
     /**
      * Constructor de la clase Baraja
      */
     public Baraja() {
-        num = new String[TOTAL_CARTAS]; // Replace Magic Number with Symbolic Constant
+        cartas = new String[TOTAL_CARTAS]; // Replace Magic Number with Symbolic Constant
 
-        int i = 0; // la i será el índice para meter cada carta en el array num
+        int i = 0; // la i será el índice para meter cada carta en el array cartas
         // bucle que recorre los 4 palos
         for (int j = 0; j < p.length; j++) {
             // pa es un palo de la baraja
@@ -48,7 +48,7 @@ public class Baraja {
                 }
                 // aquí se crea la carta como string, p ej, sota de copas
                 nombre = nombre + " de " + pa;
-                num[i] = nombre; // se asigna a una posición del array grande de 48 cartas
+                cartas[i] = nombre; // se asigna a una posición del array grande de 48 cartas
                 i++; // aumento la posición
             }
         }
@@ -59,10 +59,10 @@ public class Baraja {
      * @return la carta extraida, o null si esta vacia
      */
     public String sacar() {
-        for (int i = 0; i < num.length; i++) {
-            String carta = num[i];
+        for (int i = 0; i < cartas.length; i++) {
+            String carta = cartas[i];
             if (carta != null) {
-                num[i] = null;
+                cartas[i] = null;
                 return carta;
             }
         }
@@ -75,9 +75,9 @@ public class Baraja {
      * @param carta la carta a añadir
      */
     public void meter(String carta) {
-        for (int i = num.length - 1; i >= 0; i--) {
-            if (num[i] == null) {
-                num[i] = carta;
+        for (int i = cartas.length - 1; i >= 0; i--) {
+            if (cartas[i] == null) {
+                cartas[i] = carta;
                 System.out.println("original.Carta devuelta: " + carta);
                 return;
             }
@@ -91,8 +91,8 @@ public class Baraja {
      * @return true si esta vacia, false en caso contrario
      */
     public boolean vacia() {
-        for (int i = 0; i < num.length; i++) {
-            if (num[i] != null) return false;
+        for (int i = 0; i < cartas.length; i++) {
+            if (cartas[i] != null) return false;
         }
         return true;
     }
@@ -108,15 +108,15 @@ public class Baraja {
             System.out.println();
         } else {
             if (alReves) {
-                for (int i = num.length - 1; i >= 0 ; i--) {
-                    if (num[i] != null) {
-                        System.out.print(num[i] + " | ");
+                for (int i = cartas.length - 1; i >= 0 ; i--) {
+                    if (cartas[i] != null) {
+                        System.out.print(cartas[i] + " | ");
                     }
                 }
             } else {
-                for (int i = 0; i < num.length; i++) {
-                    if (num[i] != null) {
-                        System.out.print(num[i] + " | ");
+                for (int i = 0; i < cartas.length; i++) {
+                    if (cartas[i] != null) {
+                        System.out.print(cartas[i] + " | ");
                     }
                 }
             }
@@ -132,9 +132,9 @@ public class Baraja {
             Random r = new Random();
             int j = r.nextInt(TOTAL_CARTAS); // Replace Magic Number with Symbolic Constant
             int k = r.nextInt(TOTAL_CARTAS); // Replace Magic Number with Symbolic Constant
-            String temp = num[k];
-            num[k] = num[j];
-            num[j] = temp;
+            String temp = cartas[k];
+            cartas[k] = cartas[j];
+            cartas[j] = temp;
         }
     }
 
@@ -146,9 +146,9 @@ public class Baraja {
             Random r = new Random();
             int j = r.nextInt(48);
             int k = r.nextInt(48);
-            String temp = num[k];
-            num[k] = num[j];
-            num[j] = temp;
+            String temp = cartas[k];
+            cartas[k] = cartas[j];
+            cartas[j] = temp;
         }
     }
 }

@@ -39,3 +39,14 @@ En la compilación escribimos *.java ya que sirve para compilar todos los archiv
  
    num = new String[TOTAL_CARTAS];
 ```
+
+## Rename Variable
+- **Problema:** Num es poco descriptivo
+- **Solucion:** Se renombra a "cartas" dandole facilidad de compresión al codigo.
+- Ejemplo de uso:
+
+```
+private String[] cartas; 
+
+cartas = new String[TOTAL_CARTAS]; // Reemplazamos num por cartas
+```
