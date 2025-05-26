@@ -122,27 +122,14 @@ public class Baraja {
     }
 
     /**
-     * Este metodo mezcla la baraja 5 veces
+     * Metodo que mezcla la baraja
      */
-    public void mezclar5veces() {
-        for (int i = 0; i < 5; i++) {
-            Random r = new Random();
-            int j = r.nextInt(TOTAL_CARTAS); // Replace Magic Number with Symbolic Constant
-            int k = r.nextInt(TOTAL_CARTAS); // Replace Magic Number with Symbolic Constant
-            String temp = cartas[k];
-            cartas[k] = cartas[j];
-            cartas[j] = temp;
-        }
-    }
 
-    /**
-     * Y este metodo 40 veces
-     */
-    public void mezclar40veces() {
-        for (int i = 0; i < 40; i++) {
-            Random r = new Random();
-            int j = r.nextInt(48);
-            int k = r.nextInt(48);
+    public void mezclar(int veces) { // Parameterize Method
+        Random random = new Random();
+        for (int i = 0; i < veces; i++) {
+            int j = random.nextInt(TOTAL_CARTAS);
+            int k = random.nextInt(TOTAL_CARTAS);
             String temp = cartas[k];
             cartas[k] = cartas[j];
             cartas[j] = temp;

@@ -24,12 +24,12 @@ public class Main {
 		System.out.println("Baraja:");
 		baraja.imprimir(false);
 		// barajar 5 veces
-		baraja.mezclar5veces();
+		baraja.mezclar(5); // Metodo parametrizado
 		//imprimir baraja
 		System.out.println("\nBaraja tras barajar:");
 		baraja.imprimir(true);
 		// barajar 40 veces
-		baraja.mezclar40veces();
+		baraja.mezclar(40);
 		// imprimir baraja
 		System.out.println("\nBaraja tras barajar:");
 		baraja.imprimir(false);

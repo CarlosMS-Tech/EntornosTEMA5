@@ -102,3 +102,21 @@ cartas = new String[TOTAL_CARTAS]; // Reemplazamos num por cartas
 private boolean vacia() { 
 ```
 
+## Parameterize Method
+
+- **Problema:** Habian metodos duplicados con difentes movimientos/usos (mezclar5veces y mezclar40veces)
+- **Solucion:** Se crea un unico metodo en el que tu definas cuanto quieres mezclar (mezclar(veces))
+- Ejemplo de uso:
+
+```
+ public void mezclar(int veces) { 
+        Random random = new Random();
+        for (int i = 0; i < veces; i++) {
+            int j = random.nextInt(TOTAL_CARTAS);
+            int k = random.nextInt(TOTAL_CARTAS);
+            String temp = cartas[k];
+            cartas[k] = cartas[j];
+            cartas[j] = temp;
+        }
+    }
+```
