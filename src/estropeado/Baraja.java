@@ -13,13 +13,16 @@ import java.util.Random;
 public class Baraja {
 
     private String[] p = {"Oros", "Copas", "Espadas", "Bastos"}; // array de palos
+
+    private static final int TOTAL_CARTAS = 48; // Replace Magic Number with Symbolic Constant
+
     private String[] num; // array de cartas
 
     /**
      * Constructor de la clase Baraja
      */
     public Baraja() {
-        num = new String[48]; //inicializa array a 48 cartas
+        num = new String[TOTAL_CARTAS]; // Replace Magic Number with Symbolic Constant
 
         int i = 0; // la i será el índice para meter cada carta en el array num
         // bucle que recorre los 4 palos
@@ -127,8 +130,8 @@ public class Baraja {
     public void mezclar5veces() {
         for (int i = 0; i < 5; i++) {
             Random r = new Random();
-            int j = r.nextInt(48);
-            int k = r.nextInt(48);
+            int j = r.nextInt(TOTAL_CARTAS); // Replace Magic Number with Symbolic Constant
+            int k = r.nextInt(TOTAL_CARTAS); // Replace Magic Number with Symbolic Constant
             String temp = num[k];
             num[k] = num[j];
             num[j] = temp;

@@ -1,0 +1,41 @@
+# PROYECTO BARAJA
+
+## Descripción
+
+El proyecto usa una clase llamada 'Baraja' la cual simula una baraja de 48 cartas. Este proyecto permite crear la baraja, mezclar cartas, sacarlas y devolverlas.
+
+El objetivo del proyecto es refactorizar el codigo para una mejor claridad aplicando metodos de refactorización y JavaDoc.
+
+---
+
+## Compilar y ejecutar
+Necesario:
+- Tener instalado Java
+
+Pasos a seguir:
+1. Ejecutar la terminal
+2. Navegar a la raiz del proyecto
+3. Compilar los archivos '.java'
+
+```bash
+javac estropeado/*.java
+
+java estropeado.Main
+```
+
+En la compilación escribimos *.java ya que sirve para compilar todos los archivos .java de la carpeta. Es conocido como wildcard.
+
+---
+
+# Refactorizaciones aplicadas
+
+## Replace Magic Number with Symbolic Constant
+
+- **Problema:** El problema surge debido a que se emplea un mismo número varias veces
+- **Solucion:** Defini una variable con el nombre de "TOTAL_CARTAS" para: explicar el significado del número y para mas simplicidad a futuro 
+- Ejemplo de uso:
+```
+ private static final int TOTAL_CARTAS = 48;
+ 
+   num = new String[TOTAL_CARTAS];
+```
