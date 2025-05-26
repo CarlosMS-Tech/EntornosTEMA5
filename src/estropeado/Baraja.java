@@ -82,7 +82,7 @@ public class Baraja {
                 return;
             }
         }
-        System.out.println("Error: baraja llena");
+        throw new IllegalStateException("Error: baraja llena"); // Replace Error Code with Exception
     }
 
     /**

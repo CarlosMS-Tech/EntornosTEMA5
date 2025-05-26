@@ -50,3 +50,22 @@ private String[] cartas;
 
 cartas = new String[TOTAL_CARTAS]; // Reemplazamos num por cartas
 ```
+
+## Replace Error Code with Exception
+
+- **Problema:** El error estaba señalado sin la función de error no teniendo así un control total.
+- **Solucion:** Se reemplaza el mensaje de error escrito a mano por una excepción
+- Ejemplo de uso:
+
+```
+   public void meter(String carta) {
+        for (int i = cartas.length - 1; i >= 0; i--) {
+            if (cartas[i] == null) {
+                cartas[i] = carta;
+                System.out.println("original.Carta devuelta: " + carta);
+                return;
+            }
+        }
+        throw new IllegalStateException("Error: baraja llena"); // Si la baraja esta llena ahora lanza un error
+    }
+```
